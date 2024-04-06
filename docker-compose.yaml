@@ -2,13 +2,13 @@ name: isolated-env
 
 services:
   python-3:
-    image: python-env
+    image: # set an image name for the project
     build: ./env-config/
     volumes:
       - type: bind
-        source: ./dsa/
-        target: /dsa
-    working_dir: /dsa
+        source: ./src/
+        target: /src
+    working_dir: /src
     stdin_open: true  # docker run -i
     tty: true         # docker run -t
     entrypoint: sh
